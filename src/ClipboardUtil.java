@@ -13,10 +13,14 @@ public class ClipboardUtil {
             if (data != null && data.isDataFlavorSupported(DataFlavor.stringFlavor)) {
                 return (String) data.getTransferData(DataFlavor.stringFlavor);
             }
+
         }
         catch (Exception e) {
             e.printStackTrace();
         }
         return "";
     }
+
+
+
 }

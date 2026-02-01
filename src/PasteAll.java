@@ -6,13 +6,22 @@ public class PasteAll {
     public static void pasteAll() {
         StringBuilder finalText = new StringBuilder();
 
+
         for (String item : ClipboardListener.getBuffer()) {
             finalText.append(item).append("\n");
         }
 
+
         Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
         clipboard.setContents(new StringSelection(finalText.toString()), null);
 
+
         System.out.println("✅ All copied data moved to clipboard!");
+    }
+
+
+    public static void resetClipboard() {
+        Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
+        clipboard.setContents(new StringSelection(""), null);
     }
 }

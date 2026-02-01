@@ -1,9 +1,12 @@
+import java.awt.*;
 import java.util.*;
+import java.util.List;
 
 public class ClipboardListener {
 
     private static List<String> buffer = new ArrayList<>();
     private static String lastText = "";
+
 
     public static void startListening() {
         System.out.println("📋 Clipboard Listener Started...");
@@ -33,4 +36,10 @@ public class ClipboardListener {
     public static List<String> getBuffer() {
         return buffer;
     }
+
+    public static void clearBuffer() {
+        buffer.clear();
+    }
+
+
 }
